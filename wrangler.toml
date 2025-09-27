@@ -1,0 +1,10 @@
+name = "synapseflow-solutions"
+compatibility_date = "2024-01-27"
+
+[site]
+bucket = "./dist"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200

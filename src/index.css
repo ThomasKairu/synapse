@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary-electric: var(--primary-electric);
+  --color-secondary-neural: var(--secondary-neural);
+  --color-secondary-cyan: var(--secondary-cyan);
+  --color-accent-green: var(--accent-green);
+  --color-accent-orange: var(--accent-orange);
+  --color-neutral-white: var(--neutral-white);
+  --color-neutral-light: var(--neutral-light);
+  --color-neutral-dark: var(--neutral-dark);
+  --color-background-dark: var(--background-dark);
+  --color-background-gradient-start: var(--background-gradient-start);
+  --color-background-gradient-end: var(--background-gradient-end);
+}
+
+:root {
+  --radius: 12px;
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --card: #ffffff;
+  --card-foreground: #1f2937;
+  --popover: #ffffff;
+  --popover-foreground: #1f2937;
+  --primary: #1a365d;
+  --primary-foreground: #ffffff;
+  --secondary: #f8fafc;
+  --secondary-foreground: #1f2937;
+  --muted: #f8fafc;
+  --muted-foreground: #6b7280;
+  --accent: #f8fafc;
+  --accent-foreground: #1f2937;
+  --destructive: #ef4444;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #1a365d;
+  
+  /* Neural Network Theme Colors */
+  --primary-electric: #2563eb;
+  --secondary-neural: #7c3aed;
+  --secondary-cyan: #06b6d4;
+  --accent-green: #10b981;
+  --accent-orange: #f59e0b;
+  --neutral-white: #ffffff;
+  --neutral-light: #f8fafc;
+  --neutral-dark: #1f2937;
+  --background-dark: #0f172a;
+  --background-gradient-start: #1e293b;
+  --background-gradient-end: #0c4a6e;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #374151;
+  --secondary-foreground: #f8fafc;
+  --muted: #374151;
+  --muted-foreground: #9ca3af;
+  --accent: #374151;
+  --accent-foreground: #f8fafc;
+  --destructive: #ef4444;
+  --border: #374151;
+  --input: #374151;
+  --ring: #2563eb;
+}
+
+/* Force white text for buttons in dark sections */
+.dark [data-theme="dark"] .btn-outline,
+.dark .btn-outline a,
+[data-theme="dark"] .btn-outline,
+[data-theme="dark"] .btn-outline a {
+  color: white !important;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    margin: 0;
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  body, p, span, div {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@utility neural-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-electric) 50%, var(--secondary-neural) 100%);
+}
+
+@utility aurora-gradient {
+  background: linear-gradient(135deg, var(--background-gradient-start) 0%, var(--background-gradient-end) 50%, var(--secondary-neural) 100%);
+}
+
+@utility glass-effect {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@utility neural-glow {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.3), 0 0 40px rgba(124, 58, 237, 0.2);
+}
+
+@utility text-display {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+@utility text-body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+@utility text-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Neural Network Animation */
+@keyframes neural-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes synaptic-flow {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+@utility neural-pulse {
+  animation: neural-pulse 2s ease-in-out infinite;
+}
+
+@utility synaptic-flow {
+  animation: synaptic-flow 3s linear infinite;
+}
+
+/* Scroll animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
