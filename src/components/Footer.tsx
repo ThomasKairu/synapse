@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { BrainCircuit, ArrowUp, Github, Linkedin, Mail, ExternalLink } from 'lucide-react'
+import { ArrowUp, Github, Linkedin, Mail, ExternalLink } from 'lucide-react'
+import logo from '../assets/logo (3).png'
 
 export function Footer() {
   const scrollToTop = () => {
@@ -17,14 +18,14 @@ export function Footer() {
   ]
 
   const legalLinks = [
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms of Service', href: '#' },
-    { name: 'Site Map', href: '#' }
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Terms of Service', href: '/terms-of-service' },
+    { name: 'Site Map', href: '/sitemap.xml' }
   ]
 
   const socialLinks = [
     { name: 'GitHub', icon: Github, href: 'https://github.com/ThomasKairu' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/thomas-muchomba-a36b46312' },
     { name: 'Email', icon: Mail, href: 'mailto:thomas@synapseflow.dev' }
   ]
 
@@ -48,7 +49,7 @@ export function Footer() {
             className="lg:col-span-1"
           >
             <div className="flex items-center space-x-2 mb-6">
-              <BrainCircuit className="w-8 h-8 text-primary-electric" />
+              <img src={logo} alt="Synapseflow Solutions Logo" className="w-8 h-8" />
               <span className="text-xl font-bold text-display text-white">
                 Synapseflow Solutions
               </span>
@@ -162,7 +163,7 @@ export function Footer() {
             {/* Copyright */}
             <div className="text-center md:text-left">
               <p className="text-white/60 text-body text-sm">
-                © 2024 Synapseflow Solutions. All rights reserved.
+                © 2025 Synapseflow Solutions. All rights reserved.
               </p>
               <p className="text-white/40 text-body text-xs mt-1">
                 Built with React & Next.js | Powered by Innovation

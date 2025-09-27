@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { Button } from '@/components/ui/button'
 import { ChevronDown, Download, Eye } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -8,29 +8,33 @@ export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
 
-  const texts = [
+  const texts = useMemo(() => [
     'Full-Stack Developer',
     'AI/ML Integration Expert',
     'Enterprise Solutions Architect',
     'Business Platform Creator'
-  ]
+  ], [])
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       const current = texts[currentIndex]
       
       if (isDeleting) {
-        setCurrentText(current.substring(0, currentText.length - 1))
+        const newText = current.substring(0, currentText.length - 1)
+        setCurrentText(newText)
         
-        if (currentText === '') {
+        if (newText === '') {
           setIsDeleting(false)
           setCurrentIndex((prev) => (prev + 1) % texts.length)
         }
       } else {
-        setCurrentText(current.substring(0, currentText.length + 1))
+        const newText = current.substring(0, currentText.length + 1)
+        setCurrentText(newText)
         
-        if (currentText === current) {
-          setTimeout(() => setIsDeleting(true), 2000)
+        if (newText === current) {
+          // Start deleting after 2 seconds
+          const deleteTimeout = setTimeout(() => setIsDeleting(true), 2000)
+          return () => clearTimeout(deleteTimeout)
         }
       }
     }, isDeleting ? 50 : 100)
@@ -99,11 +103,11 @@ export function Hero() {
             className="text-lg text-white/70 mb-12 max-w-4xl mx-auto text-body leading-relaxed"
           >
             <p className="mb-4">
-              Passionate Full-Stack Developer and recent Strathmore University graduate with proven expertise in building enterprise-level business applications. I've successfully developed and deployed 4 sophisticated platforms spanning AI/ML integration, telecommunications, agency services, and business consulting.
+              Passionate Full-Stack Developer and Strathmore University graduate with enterprise-proven expertise in building enterprise-level business applications. I've successfully developed and deployed more than 4 sophisticated platforms spanning AI/ML integration, telecommunications, agency services, and business consulting.
             </p>
             <div className="grid md:grid-cols-2 gap-4 text-left">
               <div>
-                <h3 className="text-accent-green font-semibold mb-2">🚀 Featured Accomplishments:</h3>
+                <h3 className="text-accent-green font-semibold mb-2">Featured Accomplishments:</h3>
                 <ul className="space-y-1 text-sm">
                   <li>• Built AI-powered resume analysis platform</li>
                   <li>• Developed complete ISP service platform</li>
@@ -112,7 +116,7 @@ export function Hero() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-accent-orange font-semibold mb-2">💡 Core Expertise:</h3>
+                <h3 className="text-accent-orange font-semibold mb-2">Core Expertise:</h3>
                 <ul className="space-y-1 text-sm">
                   <li>• AI/ML integration & automation</li>
                   <li>• Enterprise-level architecture</li>

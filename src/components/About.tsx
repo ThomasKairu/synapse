@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
+import backgroundImg from '../assets/IMG-20231003-WA0004 (1).jpg'
 
 interface CounterProps {
   end: number
@@ -111,22 +112,28 @@ export function About() {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative h-[500px]"
           >
-            <div className="relative">
+            <div className="relative h-full">
               {/* Main Image */}
-              <div className="relative z-10 glass-effect rounded-2xl p-8 neural-glow">
+              <div className="relative z-10 glass-effect rounded-2xl neural-glow h-full flex items-center justify-center">
                 <img
                   src="/thomas-profile.png"
                   alt="Thomas Muchomba - Professional portrait"
-                  className="w-full rounded-xl"
-                  style={{ width: '100%', height: 'auto' }}
+                  className="w-full h-full object-cover rounded-xl"
+                  style={{ width: '100%', height: '100%' }}
                 />
               </div>
               
               
-              {/* Background Glow */}
-              <div className="absolute inset-0 neural-gradient rounded-2xl blur-3xl opacity-20 scale-110"></div>
+              {/* Background Image */}
+              <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                <img
+                  src={backgroundImg}
+                  alt="Background decoration"
+                  className="w-full h-full object-cover opacity-20"
+                />
+              </div>
             </div>
           </motion.div>
         </div>

@@ -79,7 +79,7 @@ export function Contact() {
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      url: '#',
+      url: 'https://www.linkedin.com/in/thomas-muchomba-a36b46312',
       description: 'Professional network'
     },
     {

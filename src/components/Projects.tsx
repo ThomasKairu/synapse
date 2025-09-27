@@ -1,18 +1,21 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { ExternalLink, Github, Brain, Wifi, Layers, Briefcase } from 'lucide-react'
+import { ExternalLink, Github } from 'lucide-react'
+import jobix from '../assets/jobix.png';
+import airnet from '../assets/airnet.png';
+import bridges from '../assets/bridges.png';
+import glows from '../assets/glows.png';
 
 const projects = [
   {
     id: 1,
     title: 'Jobix - AI-Powered Resume Analyzer',
     description: 'Sophisticated AI-driven platform that analyzes resumes against job descriptions, providing personalized optimization recommendations and detailed insights for better job matching.',
-    image: 'https://images.unsplash.com/photo-1587401511935-a7f87afadf2f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwyfHxkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjB3ZWIlMjBpbnRlcmZhY2UlMjBtb2Rlcm58ZW58MHwwfHxibHVlfDE3NTg5NjgzNDN8MA&ixlib=rb-4.1.0&q=85',
+    image: jobix,
     imageAlt: 'Modern web application interface showing AI resume analysis dashboard with charts and recommendations - KOBU Agency on Unsplash',
-    icon: Brain,
     url: 'https://www.jobix.publicvm.com',
-    github: '#',
+    github: 'https://github.com/ThomasKairu',
     features: ['AI-powered analysis', 'Resume optimization', 'Job matching', 'Privacy-first approach', 'PDF export', 'Secure processing'],
     techStack: ['AI/ML Integration', 'Advanced Data Processing', 'Secure Backend APIs', 'Modern Frontend'],
     color: 'from-blue-500 to-purple-600',
@@ -22,11 +25,10 @@ const projects = [
     id: 2,
     title: 'Airnet - ISP Service Platform',
     description: 'Complete internet service provider platform with multiple data plans, customer management, billing system, and professional network infrastructure services.',
-    image: 'https://images.unsplash.com/photo-1604049929595-dee27fb36763?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw4fHxuZXR3b3JrJTIwZGFzaGJvYXJkJTIwdGVsZWNvbW11bmljYXRpb25zJTIwaW50ZXJmYWNlJTIwdGVjaG5vbG9neXxlbnwwfDB8fHRlYWx8MTc1ODk2ODM0M3ww&ixlib=rb-4.1.0&q=85',
+    image: airnet,
     imageAlt: 'Internet service provider platform interface with pricing plans and network monitoring dashboard - Pat Whelen on Unsplash',
-    icon: Wifi,
     url: 'https://airnet.pages.dev',
-    github: '#',
+    github: 'https://github.com/ThomasKairu',
     features: ['Multi-tier pricing (KES 890-2000+)', 'Speed testing', 'Customer dashboard', 'Multi-channel support', 'Equipment sales', 'Service mapping'],
     techStack: ['Full-stack Business Application', 'Payment Integration', 'Customer Management', 'Network Monitoring APIs'],
     color: 'from-teal-500 to-cyan-600',
@@ -36,11 +38,10 @@ const projects = [
     id: 3,
     title: 'Bridges - NetArchitect Agency',
     description: 'Professional technology services agency offering web development, 3D printing, and automation services with comprehensive business management and client portal systems.',
-    image: 'https://images.unsplash.com/photo-1541462608143-67571c6738dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxhZ2VuY3klMjBwb3J0Zm9saW8lMjB0ZWNobm9sb2d5JTIwc2VydmljZXMlMjBtb2Rlcm58ZW58MHwwfHxwdXJwbGV8MTc1ODk2ODM0M3ww&ixlib=rb-4.1.0&q=85',
+    image: bridges,
     imageAlt: 'Technology agency website showing services portfolio with 3D printing and web development projects - UX Store on Unsplash',
-    icon: Layers,
     url: 'https://www.bridges.linkpc.net',
-    github: '#',
+    github: 'https://github.com/ThomasKairu',
     features: ['100+ projects completed', '50+ happy clients', 'Multi-service platform', 'Client testimonials', 'Professional delivery', 'Portfolio management'],
     techStack: ['Agency-level Platform', 'Multi-service Architecture', 'Client Management', 'Service Portfolio Management'],
     color: 'from-purple-500 to-pink-600',
@@ -50,11 +51,10 @@ const projects = [
     id: 4,
     title: 'Glows - BrightPath Consulting',
     description: 'Premium business consulting and strategic transformation agency platform with comprehensive service offerings, client management, and enterprise-level business solutions.',
-    image: 'https://images.unsplash.com/photo-1649767662275-b1c8ff96cc28?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGNvbnN1bHRpbmclMjBwcm9mZXNzaW9uYWwlMjBkYXNoYm9hcmQlMjBjb3Jwb3JhdGV8ZW58MHwwfHxvcmFuZ2V8MTc1ODk2ODM0M3ww&ixlib=rb-4.1.0&q=85',
+    image: glows,
     imageAlt: 'Business consulting platform with professional services dashboard and client management interface - Bangun Stock Production on Unsplash',
-    icon: Briefcase,
     url: 'https://www.glows.work.gd',
-    github: '#',
+    github: 'https://github.com/ThomasKairu',
     features: ['500+ successful projects', '98% client satisfaction', '15+ years experience', '50+ expert consultants', 'Strategic planning', 'Digital transformation'],
     techStack: ['Enterprise Business Platform', 'Consulting Service Management', 'Client Relationship Management', 'Strategic Planning Tools'],
     color: 'from-orange-500 to-red-600',
@@ -106,10 +106,6 @@ export function Projects() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   
-                  {/* Project Icon */}
-                  <div className={`absolute top-4 left-4 p-2 rounded-lg bg-gradient-to-r ${project.color} group-hover:scale-110 transition-transform duration-300`}>
-                    <project.icon className="w-5 h-5 text-white" />
-                  </div>
                   
                   {/* Quick Actions */}
                   <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
