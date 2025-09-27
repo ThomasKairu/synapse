@@ -85,8 +85,8 @@ export function Header() {
             >
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </Button>
-            <Button variant="neural" size="lg">
-              Let's Connect
+            <Button variant="neural" size="lg" asChild>
+              <a href="#contact">Let's Connect</a>
             </Button>
           </div>
 
@@ -130,7 +130,9 @@ export function Header() {
                   >
                     {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
                   </Button>
-                  <Button variant="neural">Let's Connect</Button>
+                  <Button variant="neural" asChild>
+                    <a href="#contact">Let's Connect</a>
+                  </Button>
                 </div>
               </div>
             </motion.div>
