@@ -295,8 +295,8 @@ export function Contact() {
                   Let's build something amazing together
                 </p>
                 <div className="space-y-3">
-                  <Button variant="neural" size="lg" className="w-full">
-                    Schedule a Consultation
+                  <Button variant="neural" size="lg" className="w-full" asChild>
+                    <a href="#contact">Schedule a Consultation</a>
                   </Button>
                   <Button variant="outline" size="lg" className="w-full border-white/20 text-white hover:bg-white/10" asChild>
                     <a href="/Thomas_Muchomba_Resume.pdf" download="Thomas_Muchomba_Resume.pdf">

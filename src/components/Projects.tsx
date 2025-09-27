@@ -195,8 +195,8 @@ export function Projects() {
           <p className="text-lg text-white/70 mb-6 text-body">
             Ready to bring your business idea to life with a professional, scalable solution?
           </p>
-          <Button variant="neural" size="xl">
-            Start Your Project
+          <Button variant="neural" size="xl" asChild>
+            <a href="#contact">Start Your Project</a>
           </Button>
         </motion.div>
       </div>
