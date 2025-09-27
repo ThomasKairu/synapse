@@ -134,9 +134,11 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <Button variant="neural" size="xl" className="group">
-              <Eye className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              View My Work
+            <Button variant="neural" size="xl" className="group" asChild>
+              <a href="#projects">
+                <Eye className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                View My Work
+              </a>
             </Button>
             <Button variant="glass" size="xl" className="group" asChild>
               <a href="/Thomas_Muchomba_Resume.pdf" download="Thomas_Muchomba_Resume.pdf">
