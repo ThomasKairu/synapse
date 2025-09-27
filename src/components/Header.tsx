@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(true)
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -15,6 +15,14 @@ export function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [isDark])
 
   const toggleTheme = () => {
     setIsDark(!isDark)
