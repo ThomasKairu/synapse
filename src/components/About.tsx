@@ -68,7 +68,7 @@ export function About() {
             
             <div className="space-y-6 text-white/80 text-body text-lg leading-relaxed">
               <p>
-                As a recent Strathmore University graduate, I've transformed my passion for technology into real-world solutions that drive business success. My journey in full-stack development has been marked by a commitment to excellence and continuous learning.
+                As a Strathmore University graduate, I've transformed my passion for technology into real-world solutions that drive business success. My journey in full-stack development has been marked by a commitment to excellence and continuous learning.
               </p>
               
               <p>
