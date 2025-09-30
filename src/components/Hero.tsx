@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { Button } from '@/components/ui/button'
 import { ChevronDown, Download, Eye } from 'lucide-react'
 import { motion } from 'framer-motion'
+import profileImage from '@/assets/IMG-20231003-WA0004 (1).jpg'
 
 export function Hero() {
   const [currentText, setCurrentText] = useState('')
@@ -55,7 +56,7 @@ export function Hero() {
           >
             <div className="relative inline-block">
               <img
-                src="/thomas-profile.png"
+                src={profileImage}
                 alt="Thomas Muchomba - Professional headshot"
                 className="w-32 h-32 rounded-full mx-auto neural-glow object-cover"
                 style={{ width: '128px', height: '128px' }}
@@ -103,7 +104,7 @@ export function Hero() {
             className="text-lg text-white/70 mb-12 max-w-4xl mx-auto text-body leading-relaxed"
           >
             <p className="mb-4">
-              Passionate Full-Stack Developer and Strathmore University graduate with enterprise-proven expertise in building enterprise-level business applications. I've successfully developed and deployed more than 4 sophisticated platforms spanning AI/ML integration, telecommunications, agency services, and business consulting.
+              Passionate Full-Stack Developer and Strathmore University graduate with enterprise-proven expertise in building enterprise-level business applications. I've successfully developed and deployed more than 74 sophisticated platforms spanning AI/ML integration, telecommunications, agency services, and business consulting.
             </p>
             <div className="grid md:grid-cols-2 gap-4 text-left">
               <div>

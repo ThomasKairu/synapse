@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import backgroundImg from '../assets/IMG-20231003-WA0004 (1).jpg'
 
 interface CounterProps {
   end: number
@@ -84,7 +83,7 @@ export function About() {
             {/* Achievement Metrics */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
               {[
-                { number: 4, suffix: '', label: 'Enterprise Apps Built' },
+                { number: 74, suffix: '', label: 'Enterprise Apps Built' },
                 { number: 600, suffix: '+', label: 'Combined Users' },
                 { number: 98, suffix: '%', label: 'Client Satisfaction' },
                 { number: 24, suffix: '/7', label: 'Support Available' }
@@ -116,22 +115,11 @@ export function About() {
           >
             <div className="relative h-full">
               {/* Main Image */}
-              <div className="relative z-10 glass-effect rounded-2xl neural-glow h-full flex items-center justify-center">
+              <div className="relative z-10 glass-effect rounded-2xl neural-glow h-full flex items-center justify-center overflow-hidden">
                 <img
                   src="/thomas-profile.png"
                   alt="Thomas Muchomba - Professional portrait"
-                  className="w-full h-full object-cover rounded-xl"
-                  style={{ width: '100%', height: '100%' }}
-                />
-              </div>
-              
-              
-              {/* Background Image */}
-              <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                <img
-                  src={backgroundImg}
-                  alt="Background decoration"
-                  className="w-full h-full object-cover opacity-20"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>

@@ -85,7 +85,7 @@ export function Contact() {
     {
       name: 'Portfolio',
       icon: ExternalLink,
-      url: '#projects',
+      url: 'https://synapseflow-aru.pages.dev/',
       description: 'Live project demonstrations'
     }
   ]

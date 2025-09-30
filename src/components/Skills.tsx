@@ -1,17 +1,33 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { 
-  Code, 
-  Database, 
-  Cloud, 
-  Smartphone, 
-  Globe, 
-  Zap,
-  Brain,
-  Settings,
+import {
   Monitor,
-  Server
+  Server,
+  Brain,
+  Settings
 } from 'lucide-react'
+import './Skills.css'
+
+const technologies = [
+  { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+  { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+  { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+  { name: 'Next.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+  { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+  { name: 'Express', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+  { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+  { name: 'Django', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
+  { name: 'Flask', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
+  { name: 'PostgreSQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+  { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+  { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+  { name: 'Kubernetes', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
+  { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
+  { name: 'Google Cloud', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg' },
+  { name: 'Terraform', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg' },
+  { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+  { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
+]
 
 const skillCategories = [
   {
@@ -142,27 +158,28 @@ export function Skills() {
           ))}
         </div>
 
-        {/* Technology Logos */}
+        {/* Technologies & Tools Scroller */}
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
-          className="mt-16"
+          className="mt-24"
         >
-          <h3 className="text-2xl font-bold text-display text-white text-center mb-8">
+          <h3 className="text-3xl font-bold text-display text-white text-center mb-12">
             Technologies & Tools
           </h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {[Code, Database, Cloud, Smartphone, Globe, Zap, Brain, Settings].map((Icon, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.2, opacity: 1 }}
-                className="p-4 glass-effect rounded-xl hover:neural-glow transition-all duration-300"
-              >
-                <Icon className="w-8 h-8 text-white" />
-              </motion.div>
-            ))}
+          <div className="scroller">
+            <div className="scroller-inner">
+              {[...technologies, ...technologies].map((tech, index) => (
+                <div key={index} className="flex flex-col items-center gap-2 text-center flex-shrink-0 w-32">
+                  <div className="w-16 h-16 p-3 glass-effect rounded-2xl flex items-center justify-center neural-glow-sm-static">
+                    <img src={tech.logo} alt={tech.name} className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-sm text-white/70 font-medium">{tech.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
 
