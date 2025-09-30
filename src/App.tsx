@@ -7,6 +7,7 @@ import { Projects } from '@/components/Projects'
 import { Skills } from '@/components/Skills'
 import { Contact } from '@/components/Contact'
 import { Footer } from '@/components/Footer'
+import { StickyWhatsapp } from '@/components/StickyWhatsapp'
 import { Helmet } from 'react-helmet-async'
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <StickyWhatsapp />
     </div>
   )
 }
